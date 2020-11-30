@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Job</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row mt-1">
+            <div class="col-10"></div>
+            <div class="col-1"><a href="/dashboard">Dashboard</a></div>
+            <div class="col-1"><a href="/logout">Logout</a></div>
+        </div>
+        <div class="row ml-2 mt-4"><h3>Hello {{request.session.first_name}}! These are the job details!</h3></div>
+        <div class="row mt-4 ml-4"><h4>{{Job.title}}</h4></div>
+        <div class="col-6 mt-4 ml-5 border border-dark py-4 px-5">
+            <div class="row mb-3"><h5>{{Job.desc}}</h5></div>
+            <div class="row mb-3"><h5>location: {{Job.location}}</h5></div>
+            <div class="row mb-3"><h5>Posted by: {{Job.posted_by.first_name}}</h5></div>
+            <div class="row"><h5>Posted on: {{Job.created_at}}</h5></div>
+        </div>
+        <!-- <div class="col"></div>
+        {% if UserJob %}
+        <div class="row">
+            <div class="col-3"><a href="/give_up/{{request.session.UserJobid}}">Give up</a></div>
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col-2">
+                <a href="/jobs/take_on/{{UserJob.job.id}}">Add to my jobs</a>
+            </div>
+        </div>
+        {% endif %} -->
+        
+    </div>
+</body>
+</html>
